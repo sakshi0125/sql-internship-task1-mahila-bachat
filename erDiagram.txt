@@ -1,0 +1,38 @@
+         +---------------------+           +-----------------------+
+         |    MahilaGroups     |           |        Staff          |
+         |---------------------|           |-----------------------|
+         | GroupID (PK)        |<----------| AssignedGroupID (FK)  |
+         | GroupName           |           | StaffID (PK)          |
+         | FormationDate       |           | Name                  |
+         | Location            |           | Role                  |
+         +---------------------+           +-----------------------+
+                    |
+                    | 1
+                    | 
+                    |——< GroupID (FK)
+         +---------------------+
+         |      Members        |
+         |---------------------|
+         | MemberID (PK)       |
+         | Name                |
+         | Age                 |
+         | Phone               |
+         | GroupID (FK)        |
+         | JoinDate            |
+         +---------------------+
+                /   \
+               /     \
+ SavingID (FK)       LoanID (FK)
+   |                     |
+   |                     |
+   V                     V
++----------------+   +-------------------+
+|    Savings     |   |       Loans       |
+|----------------|   |-------------------|
+| SavingID (PK)  |   | LoanID (PK)       |
+| MemberID (FK)  |   | MemberID (FK)     |
+| Month          |   | LoanAmount        |
+| Amount         |   | IssueDate         |
++----------------+   | RepaymentDate     |
+                     | Status            |
+                     +-------------------+
